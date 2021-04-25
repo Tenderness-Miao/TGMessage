@@ -32,7 +32,7 @@ class Bot
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => $data,
+            CURLOPT_POSTFIELDS => implode($data),
         ));
         $response = curl_exec($curl);
         curl_close($curl);
