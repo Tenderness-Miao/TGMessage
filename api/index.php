@@ -3,6 +3,7 @@ require_once 'Bot.php';
 date_default_timezone_set("Asia/Shanghai");
 header('content-type: application/json');
 $arr = json_decode(file_get_contents('php://input'), true);
+$arr_ori = json_encode($arr);
 $alarmId = "告警编号:" . "\t" . $arr['alarmId'];
 $creationTime = "告警时间:" . "\t" . date('Y-m-d H:i:s', $arr['creationTime'] / 1000);
 if ($arr['priority'] == "1") {
@@ -26,10 +27,13 @@ if ($arr['status'] == "ACTIVE") {
     $alarmStatus = "确认";
 } elseif ($arr['status'] == "CLOSED") {
     $alarmStatus = "已关闭";
+} else {
+    $level = "已认领或已转发";
 }
 $status = "告警状态:" . "\t" . $alarmStatus;
 
-$data = $alarmId . "\n" . $creationTime . "\n" . $priority . "\n" . $alarmName . "\n" . $alarmContent . "\n" . $entityName . "\n" . $app . "\n" . $count . "\n" . $status;
+$data = $alarmId . "\n" . $creationTime . "\n" . $priority . "\n" . $alarmName . "\n" . $alarmContent . "\n" . $entityName . "\n" . $app . "\n" . $count . "\n" . $status . "\n" . $arr_ori;
+
 $token = $_REQUEST['token'] ?? null;
 $message = $_REQUEST['message'] ?? $data;
 
