@@ -2,16 +2,10 @@
 require_once 'Bot.php';
 
 header('content-type: application/json');
-$json_string = $_POST["txt_json"];
-
-if (ini_get("magic_quotes_gpc") == "1") {
-    $json_string = stripslashes($json_string);
-}
-
-$data = json_decode($json_string);
-
+$arr = json_decode(file_get_contents('php://input'), true);
 $token = $_REQUEST['token'] ?? null;
-$message = $_REQUEST['message'] ?? $data->alarmContent;
+$message = $_REQUEST['message'] ?? $arr['alarmContent'];
+
 
 $bot = new Bot();
 
