@@ -18,7 +18,7 @@ $priority = "告警级别:" . "\t" . $level;
 $alarmName = "告警标题:" . "\t" . $arr['alarmName'];
 $alarmContent = "告警内容:" . "\t" . $arr['alarmContent'];
 $entityName = "告警对象:" . "\t" . $arr['entityName'];
-$app = "告警应用:" . "\t" . $arr['app'];
+$appDescription = "告警应用:" . "\t" . $arr['appDescription'];
 $count = "告警次数:" . "\t" . $arr['count'];
 if ($arr['status'] == "ACTIVE") {
     $alarmStatus = "新触发";
@@ -33,7 +33,7 @@ $status = "告警状态:" . "\t" . $alarmStatus;
 $ori = "原始数据:" . "\t" . json_encode($arr);
 
 
-$data = $alarmId . "\n" . $creationTime . "\n" . $priority . "\n" . $alarmName . "\n" . $alarmContent . "\n" . $entityName . "\n" . $app . "\n" . $count . "\n" . $status . "\n\n" . $ori;
+$data = $alarmId . "\n" . $creationTime . "\n" . $priority . "\n" . $alarmName . "\n" . $alarmContent . "\n" . $entityName . "\n" . $appDescription . "\n" . $count . "\n" . $status . "\n\n" . $ori;
 
 $token = $_REQUEST['token'] ?? null;
 $message = $_REQUEST['message'] ?? $data;
