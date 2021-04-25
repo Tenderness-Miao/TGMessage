@@ -30,10 +30,9 @@ if ($arr['status'] == "ACTIVE") {
     $level = "已认领或已转发";
 }
 $status = "告警状态:" . "\t" . $alarmStatus;
-$ori = "原始数据:" . "\t" . json_encode($arr);
 
 
-$data = $alarmId . "\n" . $creationTime . "\n" . $priority . "\n" . $alarmName . "\n" . $alarmContent . "\n" . $entityName . "\n" . $appDescription . "\n" . $count . "\n" . $status . "\n\n" . $ori;
+$data = $alarmId . "\n" . $creationTime . "\n" . $priority . "\n" . $alarmName . "\n" . $alarmContent . "\n" . $entityName . "\n" . $appDescription . "\n" . $count . "\n" . $status;
 
 $token = $_REQUEST['token'] ?? null;
 $message = $_REQUEST['message'] ?? $data;
