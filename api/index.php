@@ -1,6 +1,6 @@
 <?php
 require_once 'Bot.php';
-
+date_default_timezone_set("Asia/Shanghai");
 header('content-type: application/json');
 $arr = json_decode(file_get_contents('php://input'), true);
 $alarmId = "告警编号:" . "\t" . $arr['alarmId'];
