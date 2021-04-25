@@ -22,7 +22,7 @@ $appDescription = "告警应用:" . "\t" . $arr['appDescription'];
 $count = "告警次数:" . "\t" . $arr['count'];
 if ($arr['status'] == "ACTIVE") {
     $alarmStatus = "新触发";
-} elseif ($arr['status'] == "ACT") {
+} elseif ($arr['status'] == "ACK") {
     $alarmStatus = "确认";
 } elseif ($arr['status'] == "CLOSED") {
     $alarmStatus = "已关闭";
