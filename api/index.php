@@ -4,7 +4,7 @@ require_once 'Bot.php';
 header('content-type: application/json');
 $arr = json_decode(file_get_contents('php://input'), true);
 $alarmId = "告警编号:" . "\t" . $arr['alarmId'];
-$creationTime = "告警时间:" . "\t" . date('Y-m-d H:i:s', $arr['creationTime']);
+$creationTime = "告警时间:" . "\t" . date('Y-m-d H:i:s', $arr['creationTime'] / 1000);
 if ($arr['priority'] == "1") {
     $level = "提醒";
 } elseif ($arr['priority'] == "2") {
