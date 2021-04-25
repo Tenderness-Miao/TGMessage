@@ -3,7 +3,7 @@ require_once 'Bot.php';
 
 header('content-type: application/json');
 $token = $_REQUEST['token'] ?? null;
-$message = $_REQUEST['message'] ?? '';
+$message = $_REQUEST['message'] ?? $_POST['alarmContent'];
 
 $bot = new Bot();
 
