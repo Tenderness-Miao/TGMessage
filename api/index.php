@@ -32,7 +32,7 @@ if ($arr['status'] == "ACTIVE") {
 $status = "告警状态:" . "\t" . $alarmStatus;
 
 
-$data = $alarmId . "\n" . $creationTime . "\n" . $priority . "\n" . $alarmName . "\n" . $alarmContent . "\n" . $entityName . "\n" . $appDescription . "\n" . $count . "\n" . $status;
+$data = "您有新的告警信息" . "\n" . $alarmId . "\n" . $creationTime . "\n" . $priority . "\n" . $alarmName . "\n" . $alarmContent . "\n" . $entityName . "\n" . $appDescription . "\n" . $count . "\n" . $status;
 
 $token = $_REQUEST['token'] ?? null;
 $message = $_REQUEST['message'] ?? $data;
