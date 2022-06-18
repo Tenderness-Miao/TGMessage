@@ -75,4 +75,4 @@ webhook地址为：`https://你的域名/webhook`
 浏览器窗口打开：`https://你的域名/setwebhook?key=环境变量设置的KEY&url=你的webhook地址`
 
 `code` 返回 200 就是设置成功了~
-1
+12
