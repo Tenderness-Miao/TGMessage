@@ -4,17 +4,8 @@ date_default_timezone_set("Asia/Shanghai");
 header('content-type: application/json');
 $arr = json_decode(file_get_contents('php://input'), true);
 $alarmId = "告警编号:" . "\t" . $arr['alarmId'];
-$creationTime = "告警时间:" . "\t" . date('Y-m-d H:i:s', $arr['creationTime'] / 1000);
-if ($arr['priority'] == "1") {
-    $level = "提醒";
-} elseif ($arr['priority'] == "2") {
-    $level = "警告";
-} elseif ($arr['priority'] == "3") {
-    $level = "严重";
-} else {
-    $level = "未知";
-}
-$priority = "告警级别:" . "\t" . $level;
+$creationTime = "告警时间:" . "\t" . $arr['creationTime'];
+$priority = "告警级别:" . "\t" . $arr['priority'];
 $alarmName = "告警标题:" . "\t" . $arr['alarmName'];
 $alarmContent = "告警内容:" . "\t" . $arr['alarmContent'];
 $entityName = "告警对象:" . "\t" . $arr['entityName'];
