@@ -8,7 +8,6 @@ $creationTime = "告警时间:" . "\t" . $arr['creationTime'];
 $priority = "告警级别:" . "\t" . $arr['priority'];
 $alarmName = "告警标题:" . "\t" . $arr['alarmName'];
 $alarmContent = "告警内容:" . "\t" . $arr['alarmContent'];
-$entityName = "告警对象:" . "\t" . $arr['entityName'];
 $appDescription = "告警应用:" . "\t" . $arr['appDescription'];
 $count = "告警次数:" . "\t" . $arr['count'];
 if ($arr['status'] == "ACTIVE") {
